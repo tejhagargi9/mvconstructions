@@ -40,13 +40,17 @@ function SectionTag({ index, total, children }: { index: string; total: string; 
 }
 
 export default function ProjectsPage() {
+  // image: add a path under /public (e.g. "/projects/astoriya-royal.jpg") once uploaded.
+  // Leave as null to keep the placeholder graphic.
   const projects = [
-    { name: "Riverside Residency", type: "Residential · G+12", year: "2024" },
-    { name: "Horizon Business Park", type: "Commercial · G+8", year: "2023" },
-    { name: "Sundara Bridge Retrofit", type: "Infrastructure", year: "2023" },
-    { name: "Greenfield Township", type: "Residential Layout", year: "2022" },
-    { name: "Metro Station Upgrade", type: "Infrastructure", year: "2022" },
-    { name: "Ocean View Apartments", type: "Residential · G+15", year: "2021" },
+    { name: "Astoriya Royal", location: "Ravet, Pune", type: "Residential · 2B+G+25", image: null },
+    { name: "Royal Court", location: "Dange Chowk, Pune", type: "Residential · B+G+25", image: null },
+    { name: "Galaxy Ventures", location: "Sus, Pune", type: "Residential · 2B+G+25", image: null },
+    { name: "Life Canvas", location: "Mamurdi, Pune", type: "Residential · B+G+18", image: null },
+    { name: "Pawar Apartment", location: "Ravet, Pune", type: "Residential · G+10", image: null },
+    { name: "Yashaswi School", location: "Chinchwad, Pune", type: "Institutional · G+5", image: null },
+    { name: "Commercial Complex", location: "Chikhli, Pune", type: "Commercial · B+G+4", image: null },
+    { name: "Narayan Gawari Bungalow", location: "Moi", type: "Residential · 2 Floors", image: null },
   ];
 
   return (
@@ -70,7 +74,8 @@ export default function ProjectsPage() {
             Our Work
           </h1>
           <p className="mt-4 max-w-xl text-[1.05rem] leading-relaxed text-slate-600">
-            A selection of projects delivered with structural integrity and precision.
+            High-rise residential towers, institutional buildings, and commercial
+            complexes — designed and structurally detailed across Pune and North Karnataka.
           </p>
         </div>
       </section>
@@ -80,13 +85,21 @@ export default function ProjectsPage() {
           <SectionTag index="01" total="01">All Projects</SectionTag>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((p, i) => (
-              <Link
+              <div
                 key={p.name}
-                href="/projects"
                 className="group overflow-hidden rounded-2xl border border-slate-900/10 bg-white transition-shadow hover:shadow-xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <ImagePlaceholder label={`Project ${i + 1}`} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                  {p.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <ImagePlaceholder label={`Project ${i + 1}`} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                  )}
                 </div>
                 <div className="flex items-center justify-between p-5">
                   <div>
@@ -94,14 +107,14 @@ export default function ProjectsPage() {
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-slate-500">
                       {p.type}
                     </p>
+                    <p className="mt-0.5 text-xs text-slate-400">{p.location}</p>
                   </div>
-                  <span className="font-mono text-xs text-slate-400">{p.year}</span>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
     </main>
   );
-}
+} 

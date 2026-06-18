@@ -50,14 +50,9 @@ export default function Navbar() {
           <span className="relative flex h-9 w-9 items-center justify-center rounded-lg overflow-hidden">
             <img src="/images/mvlogo.png" alt="MV Constructions" className="h-full w-full object-cover" />
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-[15px] font-semibold tracking-tight text-[#0F172A]">
-              A. Kulkarni
+          <span className="font-display text-[15px] font-semibold tracking-tight text-[#0F172A]">
+              MV Constructions
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
-              Civil Engineer
-            </span>
-          </span>
         </Link>
 
         {/* Desktop menu */}

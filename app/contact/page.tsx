@@ -13,19 +13,19 @@ function SectionTag({ index, total, children }: { index: string; total: string; 
   );
 }
 
-const CONTACT_EMAIL = "contact@mvconstructions.com";
+const CONTACT_EMAIL = "vaibhavmirje1606@gmail.com";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const projectTypes = ["Residential", "Commercial", "Structural Audit", "Site Consultation", "Other"];
+  const projectTypes = ["Residential", "Commercial", "School / Institutional", "Hospital", "Structural Audit", "Other"];
 
   const contactDetails = [
     {
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 91102 80249",
+      href: "tel:+919110280249",
       icon: <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />,
     },
     {
@@ -34,11 +34,17 @@ export default function ContactPage() {
       href: `mailto:${CONTACT_EMAIL}`,
       icon: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></>,
     },
+{
+       label: "Office",
+       value: "Veer Savarkar Nagar, Chikodi, Belgaum, Karnataka 591201",
+       href: "https://www.google.com/maps?q=16.4298914,74.5802539&z=17&hl=en",
+       icon: <><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></>,
+     },
     {
-      label: "Office",
-      value: "4th Cross, Industrial Layout, Hubballi, Karnataka 580029",
-      href: "https://maps.google.com/?q=Hubballi+Karnataka",
-      icon: <><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></>,
+      label: "LinkedIn",
+      value: "linkedin.com/in/vaibhavmirje1699",
+      href: "https://www.linkedin.com/in/vaibhavmirje1699",
+      icon: <><path d="M4 4h16v16H4z" /><path d="M8 11v5M8 8v.5M12 16v-5M12 11c0-1.2 1-2 2-2s2 .8 2 2v5" /></>,
     },
   ];
 
@@ -180,8 +186,8 @@ export default function ContactPage() {
                 <a
                   key={c.label}
                   href={c.href}
-                  target={c.label === "Office" ? "_blank" : undefined}
-                  rel={c.label === "Office" ? "noopener noreferrer" : undefined}
+                  target={c.label === "Office" || c.label === "LinkedIn" ? "_blank" : undefined}
+                  rel={c.label === "Office" || c.label === "LinkedIn" ? "noopener noreferrer" : undefined}
                   className="flex items-start gap-4 rounded-2xl border border-slate-900/10 bg-white p-5 transition-colors hover:border-[#C2410C]/30 hover:bg-[#C2410C]/[0.03]"
                 >
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#0F172A]/[0.05] text-[#0F172A]">
@@ -218,10 +224,11 @@ export default function ContactPage() {
             <div className="mt-6 overflow-hidden rounded-2xl border border-slate-900/10 shadow-sm">
               <iframe
                 title="Office location map"
-                src="https://maps.google.com/maps?q=Hubballi,Karnataka&z=14&output=embed"
+                src="https://maps.google.com/maps?q=16.4298914,74.5802539&z=17&output=embed"
                 className="h-64 w-full"
                 loading="lazy"
               />
+              +`5`
             </div>
           </div>
         </div>

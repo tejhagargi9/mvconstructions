@@ -39,41 +39,42 @@ function SectionTag({ index, total, children, light = false }: { index: string; 
 
 export default function AboutPage() {
   const timeline = [
-    { year: "2012", title: "B.E. in Civil Engineering", desc: "Graduated with honors, specializing in structural systems." },
-    { year: "2014", title: "Site Engineer, L&T Construction", desc: "Led structural execution on residential high-rises." },
-    { year: "2017", title: "Licensed Structural Engineer", desc: "Earned professional licensure for independent practice." },
-    { year: "2019", title: "Senior Structural Consultant", desc: "Advised on seismic retrofitting for 30+ existing structures." },
-    { year: "2022", title: "Founded MV Constructions", desc: "Built a firm to deliver design and execution under one roof." },
+    { year: "2017–21", title: "B.E. in Civil Engineering", desc: "KLE Dr. M.S. Sheshgiri College of Engineering and Technology, Belgaum — 8.69 CGPA." },
+    { year: "2020", title: "Site Engineer, Residential Project", desc: "Planning in AutoCAD, lineout works, and site supervision for excavation and foundation under Mr. Chandrakant M. Managutti." },
+    { year: "2021–23", title: "M.Tech in Structural Engineering", desc: "Nitte Meenakshi Institute of Technology, Bangalore — 8.82 CGPA." },
+    { year: "2022–23", title: "Internship, TRC Engineering (I) Pvt. Ltd", desc: "Studied IS code books and prepared framing plans for Manipal University Academic Block 5 in ETabs." },
+    { year: "2023", title: "Structural Design Engineer, Pune", desc: "Worked under chartered structural engineer Avinash H. Hole for 2.5 years across 8+ high-rise residential, commercial, and school projects." },
+    { year: "Present", title: "Independent Structural Design Engineer", desc: "Managing structural designs for commercial, residential, school, and hospital buildings across North Karnataka." },
   ];
 
   const credentials = [
+    "M.Tech, Structural Engineering",
     "B.E. Civil Engineering",
-    "Licensed Structural Engineer",
-    "IS Code Compliance Specialist",
-    "Seismic Design Expertise",
-    "Member, Institution of Engineers (India)",
-    "12+ Years Field Experience",
+    "IS Code Compliance (IS 456, IS 875)",
+    "High-Rise Residential Design",
+    "AutoCAD Certified",
+    "3+ Years Field Experience",
   ];
 
   const firmStats = [
-    ["2022", "Founded"],
-    ["18", "Team Members"],
-    ["120+", "Projects Delivered"],
-    ["4", "Cities Served"],
+    ["3+", "Years Experience"],
+    ["8+", "High-Rise Projects"],
+    ["2.5", "Years Under Chartered Engineer"],
+    ["4", "Building Types Served"],
   ];
 
   const firmValues = [
     {
       title: "Safety First",
-      desc: "Every drawing is checked against code before it reaches site — no shortcuts on structural integrity.",
+      desc: "Every drawing is checked against IS code before it reaches site — no shortcuts on structural integrity.",
     },
     {
       title: "Design + Execution",
-      desc: "We don't just consult — we see structures through from calculation to completion.",
+      desc: "From manual analysis and design to drafting, scheduling, and site coordination — structural integrity is carried through every stage.",
     },
     {
       title: "Transparent Process",
-      desc: "Clients get clear timelines, honest cost estimates, and direct access to the engineering team.",
+      desc: "Clients get clear timelines, honest cost estimates, and direct coordination between design and site teams.",
     },
   ];
 
@@ -111,12 +112,12 @@ export default function AboutPage() {
               <ImagePlaceholder label="Engineer Photo" className="h-full w-full" />
             </div>
             <div className="mx-auto mt-6 max-w-sm rounded-2xl border border-slate-900/10 bg-white p-5">
-              <p className="font-display text-base font-semibold">Manjunath V.</p>
+              <p className="font-display text-base font-semibold">Vaibhav Mirje</p>
               <p className="mt-0.5 font-mono text-[11px] uppercase tracking-wide text-slate-500">
-                Founder &amp; Structural Engineer
+                Structural Design Engineer
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {["RCC Design", "Seismic Retrofit", "Site Execution"].map((tag: string) => (
+                {["RCC Design", "High-Rise Structures", "Site Coordination"].map((tag: string) => (
                   <span key={tag} className="rounded-full bg-slate-900/5 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-slate-600">
                     {tag}
                   </span>
@@ -128,25 +129,29 @@ export default function AboutPage() {
           <div>
             <SectionTag index="01" total="03">Background</SectionTag>
             <h2 className="font-display text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
-              Twelve years of turning calculations into structures that last.
+              Three years of turning calculations into structures that last.
             </h2>
             <div className="mt-5 space-y-4 leading-relaxed text-slate-600">
               <p>
-                Manjunath started his career on construction sites, not behind a desk —
-                a decision that shaped how he practices structural engineering today.
-                Before he ever drafted a column layout, he was on scaffolding watching
-                how design decisions actually play out in concrete and steel.
+                Vaibhav&apos;s engineering journey began on a residential construction site,
+                where he handled AutoCAD planning, lineout works, and supervision of
+                excavation and foundation work — a grounding that shaped how he
+                approaches structural design today.
               </p>
               <p>
-                That hands-on grounding led him through site engineering roles at major
-                construction firms, then into independent structural consultation,
-                where he built a reputation for designs that were not just code-compliant
-                but genuinely buildable — economical without compromising safety.
+                That hands-on start carried through his M.Tech in Structural Engineering
+                and into 2.5 years working under chartered structural engineer
+                Avinash H. Hole in Pune, where he handled manual analysis and design
+                for slabs, beams, columns, footings, and water tanks across 8+ high-rise
+                residential, commercial, and institutional projects — including towers
+                up to 25 floors.
               </p>
               <p>
-                In 2022, that philosophy became MV Constructions: a firm built to carry
-                structural integrity all the way from first calculation to final beam,
-                rather than handing a design off and hoping it survives execution.
+                Today, Vaibhav works independently across North Karnataka, managing
+                structural designs for commercial, residential, school, and hospital
+                buildings — modelling in PlanWin, analyzing in StaadPro, and designing
+                in RCDC, while coordinating directly with site engineers to ensure
+                every structure is built true to its drawings.
               </p>
             </div>
 
@@ -192,7 +197,7 @@ export default function AboutPage() {
               From practice to firm
             </span>
             <h3 className="max-w-lg font-display text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
-              That same standard now runs through everything MV Constructions builds.
+              That same standard now runs through every project Vaibhav takes on.
             </h3>
           </div>
         </div>
@@ -200,19 +205,19 @@ export default function AboutPage() {
 
       <section className="bg-[#0F172A] px-4 py-20 text-white sm:px-6 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <SectionTag index="02" total="03" light>The Firm</SectionTag>
+          <SectionTag index="02" total="03" light>The Practice</SectionTag>
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                MV Constructions
+                Vaibhav Mirje
               </h2>
               <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-[#C2410C]">
-                Founded by Manjunath V. · 2022
+                Independent Structural Design Engineer · Chikodi, Belgaum
               </p>
               <p className="mt-5 max-w-lg leading-relaxed text-slate-300">
-                MV Constructions exists to close the gap between structural design and
-                what actually gets built — pairing rigorous engineering with on-site
-                execution, so every project stays safe, economical, and true to its
+                Vaibhav&apos;s practice closes the gap between structural design and what
+                actually gets built — pairing rigorous manual analysis with on-site
+                coordination, so every project stays safe, economical, and true to its
                 drawings from foundation to finish.
               </p>
 

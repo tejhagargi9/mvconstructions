@@ -9,7 +9,7 @@ function SectionTag({ index, total, children }: { index: string; total: string; 
       <span className="h-px flex-1 max-w-[40px] bg-slate-300" />
       <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
         {children}
-      </span>
+      </span>   
     </div>
   );
 }
