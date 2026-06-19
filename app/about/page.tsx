@@ -44,7 +44,7 @@ export default function AboutPage() {
     { year: "2021–23", title: "M.Tech in Structural Engineering", desc: "Nitte Meenakshi Institute of Technology, Bangalore — 8.82 CGPA." },
     { year: "2022–23", title: "Internship, TRC Engineering (I) Pvt. Ltd", desc: "Studied IS code books and prepared framing plans for Manipal University Academic Block 5 in ETabs." },
     { year: "2023", title: "Structural Design Engineer, Pune", desc: "Worked under chartered structural engineer Avinash H. Hole for 2.5 years across 8+ high-rise residential, commercial, and school projects." },
-    { year: "Present", title: "Independent Structural Design Engineer", desc: "Managing structural designs for commercial, residential, school, and hospital buildings across North Karnataka." },
+    { year: "2025", title: "Founded MV Constructions", desc: "Opened an independent structural design practice in Chikodi, Belgaum, managing designs for commercial, residential, school, and hospital buildings across North Karnataka." },
   ];
 
   const credentials = [
@@ -57,10 +57,10 @@ export default function AboutPage() {
   ];
 
   const firmStats = [
+    ["2025", "Practice Founded"],
     ["3+", "Years Experience"],
     ["8+", "High-Rise Projects"],
     ["2.5", "Years Under Chartered Engineer"],
-    ["4", "Building Types Served"],
   ];
 
   const firmValues = [
@@ -109,7 +109,11 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="lg:sticky lg:top-32">
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[1.5rem] border border-slate-900/10 shadow-xl">
-              <ImagePlaceholder label="Engineer Photo" className="h-full w-full" />
+              <img
+                src="/images/about_main_photo.jpeg"
+                alt="Vaibhav Mirje - Structural Engineer"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="mx-auto mt-6 max-w-sm rounded-2xl border border-slate-900/10 bg-white p-5">
               <p className="font-display text-base font-semibold">Vaibhav Mirje</p>
@@ -209,16 +213,23 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                Vaibhav Mirje
+                MV Constructions
               </h2>
               <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-[#C2410C]">
-                Independent Structural Design Engineer · Chikodi, Belgaum
+                Structural Design Practice · Est. 2025 · Chikodi, Belgaum
               </p>
               <p className="mt-5 max-w-lg leading-relaxed text-slate-300">
-                Vaibhav&apos;s practice closes the gap between structural design and what
-                actually gets built — pairing rigorous manual analysis with on-site
-                coordination, so every project stays safe, economical, and true to its
-                drawings from foundation to finish.
+                MV Constructions was founded in 2025 by Vaibhav Mirje, after completing
+                his M.Tech in Structural Engineering and 2.5 years working alongside
+                chartered structural engineer Avinash H. Hole in Pune — handling manual
+                analysis and design across 8+ high-rise residential, commercial, and
+                institutional projects, including towers up to 25 floors.
+              </p>
+              <p className="mt-4 max-w-lg leading-relaxed text-slate-300">
+                That foundation now carries through every project the practice takes
+                on — from manual structural calculations to drafting, scheduling, and
+                direct site coordination, serving residential, commercial, school, and
+                hospital clients across North Karnataka.
               </p>
 
               <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -244,7 +255,7 @@ export default function AboutPage() {
             </div>
 
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-white/10">
-              <ImagePlaceholder label="Site Photo" className="h-full w-full" />
+              <ImagePlaceholder label="Office" className="h-full w-full" />
             </div>
           </div>
 
