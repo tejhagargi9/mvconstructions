@@ -18,32 +18,32 @@ export default function ServicesPage() {
   const services = [
     {
       title: "Structural Design",
-      desc: "RCC, steel & composite structural systems engineered for safety and long-term performance.",
+      desc: "Manual analysis and design of slabs, beams and columns for residential, commercial, school and hospital buildings.",
       icon: <path d="M4 20V8l8-5 8 5v12M4 20h16M9 20v-6h6v6" />,
     },
     {
-      title: "Site Supervision",
-      desc: "On-ground quality checks and execution monitoring to keep construction code-compliant.",
+      title: "Foundation Design",
+      desc: "Design of isolated and combined footings tailored to soil conditions and structural loads.",
       icon: <path d="M3 20l6-14h6l6 14M7 20l5-12 5 12M9 16h6" />,
     },
     {
-      title: "Structural Audits",
-      desc: "Condition assessment and retrofitting recommendations for existing buildings.",
-      icon: <path d="M12 2l9 4.9V17l-9 5-9-5V6.9L12 2zm0 5v10M7 9l5-2 5 2" />,
+      title: "Water Tank Design",
+      desc: "Manual calculations for underground and overhead water tanks as part of complete building design.",
+      icon: <path d="M12 2c4 4 6 7 6 10a6 6 0 11-12 0c0-3 2-6 6-10z" />,
     },
     {
-      title: "Consultation & Approvals",
-      desc: "Drawings, calculations & documentation prepared for municipal code approval.",
+      title: "Structural Analysis & Modelling",
+      desc: "Modelling in PlanWin, analysis in StaadPro and ETabs, with component design carried out in RCDC.",
       icon: <path d="M4 4h16v16H4V4zm4 4h8M8 12h8M8 16h5" />,
     },
     {
-      title: "Seismic Retrofitting",
-      desc: "Strengthening existing structures to meet current seismic safety standards.",
+      title: "Site Supervision",
+      desc: "Coordinating with site engineers and inspecting site work for compliance with the structural design provided.",
       icon: <path d="M12 2l9 4.9V17l-9 5-9-5V6.9L12 2zm0 5v10M7 9l5-2 5 2" />,
     },
     {
-      title: "Quality Control",
-      desc: "Independent review of construction materials and methods for code compliance.",
+      title: "Drafting & Detailing",
+      desc: "Drafting and scheduling of slabs, beams, columns, footings, water tanks, retaining walls and column link details.",
       icon: <path d="M9 12l2 2 4-4M5 12l5 0 5 0M5 8l5 0 5 0M5 16l5 0 5 0" />,
     },
   ];
