@@ -33,10 +33,10 @@ function ImagePlaceholder({ label, className = "" }: { label: string; className?
 
 export default function ProjectsSection() {
   const projects = [
-    { name: "Riverside Residency", type: "Residential · G+12", year: "2024" },
-    { name: "Horizon Business Park", type: "Commercial · G+8", year: "2023" },
-    { name: "Sundara Bridge Retrofit", type: "Infrastructure", year: "2023" },
-    { name: "Greenfield Township", type: "Residential Layout", year: "2022" },
+    { name: "Astoriya Royal", type: "Residential · 2B+G+25", location: "Ravet, Pune" },
+    { name: "Galaxy Ventures", type: "Residential · 2B+G+25", location: "Sus, Pune" },
+    { name: "Yashaswi School", type: "Institutional · G+5", location: "Chinchwad, Pune" },
+    { name: "Commercial Complex", type: "Commercial · B+G+4", location: "Chikhli, Pune" },
   ];
 
   return (
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((p: { name: string; type: string; year: string }, i: number) => (
+          {projects.map((p: { name: string; type: string; location: string }, i: number) => (
             <Link
               key={p.name}
               href="/projects"
@@ -81,7 +81,7 @@ export default function ProjectsSection() {
                     {p.type}
                   </p>
                 </div>
-                <span className="font-mono text-xs text-slate-400">{p.year}</span>
+                <span className="font-mono text-xs text-slate-400">{p.location}</span>
               </div>
             </Link>
           ))}

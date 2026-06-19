@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -14,7 +15,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("/");
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -58,12 +59,11 @@ export default function Navbar() {
         {/* Desktop menu */}
         <ul className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => {
-            const isActive = activeHref === link.href;
+            const isActive = pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={() => setActiveHref(link.href)}
                   className={[
                     "relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
                     isActive
@@ -116,25 +116,25 @@ export default function Navbar() {
         ].join(" ")}
       >
         <ul className="flex flex-col gap-1 p-3">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => {
-                  setActiveHref(link.href);
-                  setMobileOpen(false);
-                }}
-                className={[
-                  "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors",
-                  activeHref === link.href
-                    ? "bg-slate-900/5 text-[#0F172A]"
-                    : "text-slate-600 hover:bg-slate-900/5 hover:text-[#0F172A]",
-                ].join(" ")}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={[
+                    "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors",
+                    isActive
+                      ? "bg-slate-900/5 text-[#0F172A]"
+                      : "text-slate-600 hover:bg-slate-900/5 hover:text-[#0F172A]",
+                  ].join(" ")}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
           <li className="pt-1">
             <Link
               href="/contact"

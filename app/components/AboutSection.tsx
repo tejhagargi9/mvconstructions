@@ -1,40 +1,15 @@
 "use client";
 
-function ImagePlaceholder({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div
-      className={`relative flex items-center justify-center overflow-hidden bg-[#0F172A]/[0.04] ${className}`}
-    >
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.07]"
-        viewBox="0 0 200 200"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <pattern id={`grid-${label}`} width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M0 0 H20 V20" fill="none" stroke="#0F172A" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="200" height="200" fill={`url(#grid-${label})`} />
-      </svg>
-      <div className="relative flex flex-col items-center gap-2 text-slate-400">
-        <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="M21 15l-5-5L5 21" />
-        </svg>
-        <span className="font-mono text-[11px] uppercase tracking-[0.15em]">{label}</span>
-      </div>
-    </div>
-  );
-}
-
 export default function AboutSection() {
   return (
     <section className="px-4 py-20 sm:px-6 lg:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[1.5rem] border border-slate-900/10 shadow-xl">
-          <ImagePlaceholder label="Engineer Photo" className="h-full w-full" />
+          <img
+            src="/images/frontpageengineerphoto.jpeg"
+            alt="Structural Engineer"
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div>

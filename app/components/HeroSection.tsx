@@ -2,35 +2,6 @@
 
 import Link from "next/link";
 
-function ImagePlaceholder({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div
-      className={`relative flex items-center justify-center overflow-hidden bg-[#0F172A]/[0.04] ${className}`}
-    >
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.07]"
-        viewBox="0 0 200 200"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <pattern id={`grid-${label}`} width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M0 0 H20 V20" fill="none" stroke="#0F172A" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="200" height="200" fill={`url(#grid-${label})`} />
-      </svg>
-      <div className="relative flex flex-col items-center gap-2 text-slate-400">
-        <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="M21 15l-5-5L5 21" />
-        </svg>
-        <span className="font-mono text-[11px] uppercase tracking-[0.15em]">{label}</span>
-      </div>
-    </div>
-  );
-}
-
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pt-40 lg:pb-28">
@@ -51,7 +22,7 @@ export default function HeroSection() {
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/70 px-3.5 py-1.5 font-mono text-xs tracking-wide text-slate-600 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-[#C2410C]" />
-            Licensed Structural Engineer · 12+ yrs
+            Licensed Structural Engineer · 3+ yrs
           </div>
 
           <h1 className="font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[3.6rem]">
@@ -88,8 +59,8 @@ export default function HeroSection() {
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-slate-900/10 pt-6">
             {[
-              ["120+", "Projects Delivered"],
-              ["12 Yrs", "Field Experience"],
+              ["12+", "Projects Delivered"],
+              ["3+ Yrs", "Field Experience"],
               ["0", "Structural Failures"],
             ].map((item: string[], idx: number) => (
               <div key={idx}>
@@ -104,7 +75,11 @@ export default function HeroSection() {
 
         <div className="relative">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-slate-900/10 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.25)]">
-            <ImagePlaceholder label="Building Photo" className="h-full w-full" />
+            <img
+              src="/images/herosectionbuilding.jpeg"
+              alt="Building"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-slate-900/10 bg-white/90 px-5 py-4 shadow-lg backdrop-blur-sm sm:block">
             <p className="font-mono text-[10px] uppercase tracking-wide text-slate-500">
