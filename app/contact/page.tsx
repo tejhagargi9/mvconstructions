@@ -1,26 +1,17 @@
-"use client";
+import { Metadata } from "next";
+import ContactForm from "./Form";
 
-import { useState } from "react";
-import Link from "next/link";
-
-function SectionTag({ index, total, children }: { index: string; total: string; children: React.ReactNode }) {
-  return (
-    <div className="mb-4 flex items-center gap-3">
-      <span className="font-mono text-xs tracking-[0.2em] text-[#C2410C]">{index}/{total}</span>
-      <span className="h-px flex-1 max-w-[40px] bg-slate-300" />
-      <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">{children}</span>
-    </div>
-  );
-}
-
-const CONTACT_EMAIL = "vaibhavmirje1606@gmail.com";
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact MV Constructions for structural engineering consultation. Based in Chikodi, Belgaum, serving North Karnataka and Pune regions.",
+  openGraph: {
+    title: "Contact MV Constructions",
+    description: "Reach out for structural engineering consultation, design inquiries, or site supervision services.",
+    images: [{ url: "/images/about_main_photo.jpeg" }],
+  },
+};
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const projectTypes = ["Residential", "Commercial", "School / Institutional", "Hospital", "Structural Audit", "Other"];
-
   const contactDetails = [
     {
       label: "Phone",
@@ -30,16 +21,16 @@ export default function ContactPage() {
     },
     {
       label: "Email",
-      value: CONTACT_EMAIL,
-      href: `mailto:${CONTACT_EMAIL}`,
+      value: "vaibhavmirje1606@gmail.com",
+      href: "mailto:vaibhavmirje1606@gmail.com",
       icon: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></>,
     },
-{
-       label: "Office",
-       value: "Veer Savarkar Nagar, Chikodi, Belgaum, Karnataka 591201",
-       href: "https://www.google.com/maps?q=16.4298914,74.5802539&z=17&hl=en",
-       icon: <><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></>,
-     },
+    {
+      label: "Office",
+      value: "Veer Savarkar Nagar, Chikodi, Belgaum, Karnataka 591201",
+      href: "https://www.google.com/maps?q=16.4298914,74.5802539&z=17&hl=en",
+      icon: <><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></>,
+    },
     {
       label: "LinkedIn",
       value: "linkedin.com/in/vaibhavmirje1699",
@@ -47,35 +38,6 @@ export default function ContactPage() {
       icon: <><path d="M4 4h16v16H4z" /><path d="M8 11v5M8 8v.5M12 16v-5M12 11c0-1.2 1-2 2-2s2 .8 2 2v5" /></>,
     },
   ];
-
-  function validate() {
-    const e: Record<string, string> = {};
-    if (!form.name.trim()) e.name = "Enter your name";
-    if (!form.email.trim()) e.email = "Enter your email";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
-    if (!form.message.trim()) e.message = "Tell us a bit about your project";
-    return e;
-  }
-
-  function handleSubmit(ev: React.FormEvent) {
-    ev.preventDefault();
-    const validation = validate();
-    setErrors(validation);
-    if (Object.keys(validation).length > 0) return;
-
-    const subject = encodeURIComponent(
-      `New inquiry${form.projectType ? `: ${form.projectType}` : ""} — ${form.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || "—"}\nProject type: ${form.projectType || "—"}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  }
-
-  function update(field: string, value: string) {
-    setForm((f) => ({ ...f, [field]: value }));
-    if (errors[field]) setErrors((er) => ({ ...er, [field]: "" }));
-  }
 
   return (
     <main className="bg-[#FAFAF8] text-[#0F172A]">
@@ -106,81 +68,16 @@ export default function ContactPage() {
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[1.75rem] border border-slate-900/10 bg-white p-6 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.15)] sm:p-9">
-            <SectionTag index="01" total="02">Send a message</SectionTag>
-
-            <form onSubmit={handleSubmit} noValidate className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Full name" error={errors.name}>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => update("name", e.target.value)}
-                    placeholder="Your name"
-                    className={inputClass(errors.name)}
-                  />
-                </Field>
-                <Field label="Email" error={errors.email}>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) => update("email", e.target.value)}
-                    placeholder="you@email.com"
-                    className={inputClass(errors.email)}
-                  />
-                </Field>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Phone (optional)">
-                  <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) => update("phone", e.target.value)}
-                    placeholder="+91 00000 00000"
-                    className={inputClass()}
-                  />
-                </Field>
-                <Field label="Project type">
-                  <select
-                    value={form.projectType}
-                    onChange={(e) => update("projectType", e.target.value)}
-                    className={`${inputClass()} appearance-none`}
-                  >
-                    <option value="">Select one</option>
-                    {projectTypes.map((t) => (
-                      <option key={t} value={t}>{t}</option>
-                    ))}
-                  </select>
-                </Field>
-              </div>
-
-              <Field label="Project details" error={errors.message}>
-                <textarea
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) => update("message", e.target.value)}
-                  placeholder="Tell us about the site, scope, and timeline..."
-                  className={`${inputClass(errors.message)} resize-none`}
-                />
-              </Field>
-
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0F172A] px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#1E293B] sm:w-auto"
-              >
-                Send message
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <p className="font-mono text-[11px] text-slate-400">
-                Opens your email app with the message pre-filled.
-              </p>
-            </form>
+            <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+              Send a message
+            </p>
+            <ContactForm />
           </div>
 
           <div>
-            <SectionTag index="02" total="02">Reach us directly</SectionTag>
+            <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+              Reach us directly
+            </p>
             <div className="space-y-4">
               {contactDetails.map((c) => (
                 <a
@@ -228,29 +125,10 @@ export default function ContactPage() {
                 className="h-64 w-full"
                 loading="lazy"
               />
-              +`5`
             </div>
           </div>
         </div>
       </section>
     </main>
   );
-}
-
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="mb-1.5 block text-sm font-medium text-slate-700">{label}</span>
-      {children}
-      {error && <span className="mt-1.5 block text-xs text-[#C2410C]">{error}</span>}
-    </label>
-  );
-}
-
-function inputClass(error?: string) {
-  return [
-    "w-full rounded-xl border bg-[#FAFAF8] px-4 py-3 text-sm text-[#0F172A] placeholder:text-slate-400",
-    "outline-none transition-colors focus:border-[#0F172A]/40 focus:bg-white focus:ring-2 focus:ring-[#0F172A]/10",
-    error ? "border-[#C2410C]/40" : "border-slate-900/10",
-  ].join(" ");
 }

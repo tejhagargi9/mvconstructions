@@ -33,10 +33,10 @@ function ImagePlaceholder({ label, className = "" }: { label: string; className?
 
 export default function ProjectsSection() {
   const projects = [
-    { name: "Astoriya Royal", type: "Residential · 2B+G+25", location: "Ravet, Pune" },
-    { name: "Galaxy Ventures", type: "Residential · 2B+G+25", location: "Sus, Pune" },
-    { name: "Yashaswi School", type: "Institutional · G+5", location: "Chinchwad, Pune" },
-    { name: "Commercial Complex", type: "Commercial · B+G+4", location: "Chikhli, Pune" },
+    { name: "Astoriya Royal", type: "Residential · 2B+G+25", location: "Ravet, Pune", image: "/images/astoria_royals.jpeg" },
+    { name: "Galaxy Ventures", type: "Residential · 2B+G+25", location: "Sus, Pune", image: "/images/galaxy_ventures.jpeg" },
+    { name: "Yashaswi School", type: "Institutional · G+5", location: "Chinchwad, Pune", image: null },
+    { name: "Commercial Complex", type: "Commercial · B+G+4", location: "Chikhli, Pune", image: null },
   ];
 
   return (
@@ -65,14 +65,23 @@ export default function ProjectsSection() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((p: { name: string; type: string; location: string }, i: number) => (
+          {projects.map((p: { name: string; type: string; location: string; image: string | null }, i: number) => (
             <Link
               key={p.name}
               href="/projects"
               className="group overflow-hidden rounded-2xl border border-slate-900/10 bg-white transition-shadow hover:shadow-xl"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <ImagePlaceholder label={`Project ${i + 1}`} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                {p.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <ImagePlaceholder label={`Project ${i + 1}`} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                )}
               </div>
               <div className="flex items-center justify-between p-5">
                 <div>

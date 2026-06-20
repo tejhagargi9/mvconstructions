@@ -1,0 +1,16 @@
+{
+  "name": "MV Constructions",
+  "short_name": "MV Constructions",
+  "description": "Expert structural engineering consultation for safe, economical, and code-compliant construction.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#0F172A",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

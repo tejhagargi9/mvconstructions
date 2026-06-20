@@ -16,7 +16,7 @@ export default function HighlightSection() {
         </svg>
 
         <p className="font-display text-2xl font-medium leading-snug text-[#0F172A] sm:text-3xl">
-          I'd rather understand the calculation than trust the software blindly —
+          I&apos;d rather understand the calculation than trust the software blindly —
           every design starts on paper before it ever opens in StaadPro.
         </p>
         <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">

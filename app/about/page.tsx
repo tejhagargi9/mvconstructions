@@ -1,29 +1,15 @@
-"use client";
-
 import Link from "next/link";
+import { Metadata } from "next";
 
-function ImagePlaceholder({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div className={`relative flex items-center justify-center overflow-hidden bg-[#0F172A]/[0.04] ${className}`}>
-      <svg className="absolute inset-0 h-full w-full opacity-[0.07]" viewBox="0 0 200 200" preserveAspectRatio="none">
-        <defs>
-          <pattern id={`grid-${label}`} width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M0 0 H20 V20" fill="none" stroke="#0F172A" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="200" height="200" fill={`url(#grid-${label})`} />
-      </svg>
-      <div className="relative flex flex-col items-center gap-2 text-slate-400">
-        <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="M21 15l-5-5L5 21" />
-        </svg>
-        <span className="font-mono text-[11px] uppercase tracking-[0.15em]">{label}</span>
-      </div>
-    </div>
-  );
-}
+export const metadata: Metadata = {
+  title: "About",
+  description: "Founded in 2025 by Vaibhav Mirje, MV Constructions delivers innovative structural consultancy with focus on precision, safety, and modern design practices.",
+  openGraph: {
+    title: "About MV Constructions",
+    description: "Learn about our structural engineering practice founded by Vaibhav Mirje with expertise in residential, commercial, and institutional projects.",
+    images: [{ url: "/images/about_main_photo.jpeg" }],
+  },
+};
 
 function SectionTag({ index, total, children, light = false }: { index: string; total: string; children: React.ReactNode; light?: boolean }) {
   return (
@@ -219,17 +205,22 @@ export default function AboutPage() {
                 Structural Design Practice · Est. 2025 · Chikodi, Belgaum
               </p>
               <p className="mt-5 max-w-lg leading-relaxed text-slate-300">
-                MV Constructions was founded in 2025 by Vaibhav Mirje, after completing
-                his M.Tech in Structural Engineering and 2.5 years working alongside
-                chartered structural engineer Avinash H. Hole in Pune — handling manual
-                analysis and design across 8+ high-rise residential, commercial, and
-                institutional projects, including towers up to 25 floors.
+                MV Constructions was founded in 2025 by Vaibhav Mirje with a vision to
+                deliver innovative, reliable, and sustainable structural consultancy solutions.
+                As the driving force behind the firm, he brings a deep passion for
+                engineering excellence and a commitment to creating structures that stand
+                the test of time.
               </p>
               <p className="mt-4 max-w-lg leading-relaxed text-slate-300">
-                That foundation now carries through every project the practice takes
-                on — from manual structural calculations to drafting, scheduling, and
-                direct site coordination, serving residential, commercial, school, and
-                hospital clients across North Karnataka.
+                With a focus on precision, safety, and modern design practices, MV
+                Constructions aims to provide clients with tailored solutions that balance
+                functionality and aesthetics. The practice is built on the belief that strong
+                foundations — both in engineering and in relationships — lead to lasting success.
+              </p>
+              <p className="mt-4 max-w-lg leading-relaxed text-slate-300">
+                Through this consultancy, Vaibhav strives to combine technical expertise with
+                a client-first approach, ensuring every project reflects quality, trust, and
+                forward-thinking design.
               </p>
 
               <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -255,7 +246,11 @@ export default function AboutPage() {
             </div>
 
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-white/10">
-              <ImagePlaceholder label="Office" className="h-full w-full" />
+              <img
+                src="/images/mvconstructionsprofile.jpeg"
+                alt="MV Constructions Office"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
 

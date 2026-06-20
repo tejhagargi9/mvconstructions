@@ -16,8 +16,50 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MV Constructions - Civil Engineering",
+  title: {
+    default: "MV Constructions - Civil Engineering",
+    template: "%s | MV Constructions",
+  },
   description: "Expert structural engineering consultation for safe, economical, and code-compliant construction.",
+  keywords: ["structural engineering", "civil engineering", "construction", "building design", "structural consultancy", "RCC design", "StaadPro", "ETabs", "Pune", "Belgaum"],
+  authors: [{ name: "Vaibhav Mirje", url: "https://www.linkedin.com/in/vaibhavmirje1699" }],
+  creator: "MV Constructions",
+  metadataBase: new URL("https://www.mvconstructions.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "MV Constructions",
+    title: "MV Constructions - Structural Engineering Consultancy",
+    description: "Expert structural engineering consultation for safe, economical, and code-compliant construction across Pune and North Karnataka.",
+    images: [
+      {
+        url: "/images/about_main_photo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "MV Constructions - Structural Engineering Office",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MV Constructions - Structural Engineering Consultancy",
+    description: "Expert structural engineering consultation for safe, economical, and code-compliant construction.",
+    images: ["/images/about_main_photo.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -37,3 +79,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const viewport = {
+  themeColor: "#0F172A",
+};

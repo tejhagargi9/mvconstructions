@@ -1,4 +1,14 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Structural design, foundation design, water tank design, site supervision, and drafting services for residential, commercial, and institutional buildings.",
+  openGraph: {
+    title: "Structural Engineering Services",
+    description: "Comprehensive structural engineering services including RCC design, StaadPro analysis, and site coordination across Pune and North Karnataka.",
+    images: [{ url: "/images/about_main_photo.jpeg" }],
+  },
+};
 
 function SectionTag({ index, total, children }: { index: string; total: string; children: React.ReactNode }) {
   return (
@@ -69,7 +79,7 @@ export default function ServicesPage() {
             What we provide
           </h1>
           <p className="mt-4 max-w-xl text-[1.05rem] leading-relaxed text-slate-600">
-            Structural engineering services tailored to your project's specific needs.
+            Structural engineering services tailored to your project&apos;s specific needs.
           </p>
         </div>
       </section>

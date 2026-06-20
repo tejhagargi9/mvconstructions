@@ -1,6 +1,19 @@
-"use client";
+import { Metadata } from "next";
 
-import Link from "next/link";
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "View MV Constructions portfolio of structural engineering projects including residential towers, schools, and commercial complexes across Pune and North Karnataka.",
+  openGraph: {
+    title: "Our Projects - MV Constructions",
+    description: "High-rise residential towers, institutional buildings, and commercial complexes we've designed and detailed.",
+    images: [
+      { url: "/images/astoria_royals.jpeg" },
+      { url: "/images/galaxy_ventures.jpeg" },
+      { url: "/images/royal_court.jpeg" },
+      { url: "/images/life_canvas.jpeg" },
+    ],
+  },
+};
 
 function ImagePlaceholder({ label, className = "" }: { label: string; className?: string }) {
   return (
@@ -40,13 +53,11 @@ function SectionTag({ index, total, children }: { index: string; total: string; 
 }
 
 export default function ProjectsPage() {
-  // image: add a path under /public (e.g. "/projects/astoriya-royal.jpg") once uploaded.
-  // Leave as null to keep the placeholder graphic.
   const projects = [
-    { name: "Astoriya Royal", location: "Ravet, Pune", type: "Residential · 2B+G+25", image: null },
-    { name: "Royal Court", location: "Dange Chowk, Pune", type: "Residential · B+G+25", image: null },
-    { name: "Galaxy Ventures", location: "Sus, Pune", type: "Residential · 2B+G+25", image: null },
-    { name: "Life Canvas", location: "Mamurdi, Pune", type: "Residential · B+G+18", image: null },
+    { name: "Astoriya Royal", location: "Ravet, Pune", type: "Residential · 2B+G+25", image: "/images/astoria_royals.jpeg" },
+    { name: "Royal Court", location: "Dange Chowk, Pune", type: "Residential · B+G+25", image: "/images/royal_court.jpeg" },
+    { name: "Galaxy Ventures", location: "Sus, Pune", type: "Residential · 2B+G+25", image: "/images/galaxy_ventures.jpeg" },
+    { name: "Life Canvas", location: "Mamurdi, Pune", type: "Residential · B+G+18", image: "/images/life_canvas.jpeg" },
     { name: "Pawar Apartment", location: "Ravet, Pune", type: "Residential · G+10", image: null },
     { name: "Yashaswi School", location: "Chinchwad, Pune", type: "Institutional · G+5", image: null },
     { name: "Commercial Complex", location: "Chikhli, Pune", type: "Commercial · B+G+4", image: null },
