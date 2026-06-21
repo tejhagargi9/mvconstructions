@@ -81,12 +81,6 @@ export default function HeroSection() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-slate-900/10 bg-white/90 px-5 py-4 shadow-lg backdrop-blur-sm sm:block">
-            <p className="font-mono text-[10px] uppercase tracking-wide text-slate-500">
-              Latest Completion
-            </p>
-            <p className="mt-1 font-display text-sm font-semibold">Horizon Business Park</p>
-          </div>
         </div>
       </div>
     </section>

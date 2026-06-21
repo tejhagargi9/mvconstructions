@@ -35,8 +35,6 @@ export default function ProjectsSection() {
   const projects = [
     { name: "Astoriya Royal", type: "Residential · 2B+G+25", location: "Ravet, Pune", image: "/images/astoria_royals.jpeg" },
     { name: "Galaxy Ventures", type: "Residential · 2B+G+25", location: "Sus, Pune", image: "/images/galaxy_ventures.jpeg" },
-    { name: "Yashaswi School", type: "Institutional · G+5", location: "Chinchwad, Pune", image: null },
-    { name: "Commercial Complex", type: "Commercial · B+G+4", location: "Chikhli, Pune", image: null },
   ];
 
   return (
